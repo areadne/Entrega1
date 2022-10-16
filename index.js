@@ -30,19 +30,23 @@ function resultado() {
     alert("Necesitas ahorrar " + ahorro + " durante " + cantidadTiempo + " meses para alcanzar tu objetivo de " + montoAhorro)
 }
 
+
+function recalcularAhorro() {
+    let recalcular
+
+    do {
+        recalcular = prompt("¿Deseas recalcular?. Escribe (SI/NO)")
+        recalcular = recalcular.toUpperCase()
+
+        if (recalcular == "SI") {
+            console.log("Recalculando...")
+            muestraResultado = resultado()
+        } else {
+            alert("Gracias por usar nuestra aplicacion")
+        }
+
+    } while (recalcular != "NO")
+}
+
 let muestraResultado = resultado()
-
-let recalcular
-
-do {
-    recalcular = prompt("¿Deseas recalcular?. Escribe (SI/NO)")
-    recalcular = recalcular.toUpperCase()
-
-    if (recalcular == "SI") {
-        console.log("Recalculando...")
-        muestraResultado = resultado()
-    } else {
-        alert("Gracias por usar nuestra aplicacion")
-    }
-    
-} while (recalcular != "NO")
+let solicitaRecalcular = recalcularAhorro()
